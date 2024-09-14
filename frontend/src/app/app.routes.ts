@@ -5,6 +5,6 @@ export const routes: Routes = [
   // {path:'', component:AppComponent},
     //add lazy modules to routing
     {
-      path:"base", loadChildren: () => import('./login-register-sample1/login-register-sample1.module').then(q => q.LoginRegisterSample1Module),
+      path:"sample1", loadChildren: () => import('./login-register-sample1/login-register-sample1.module').then(q => q.LoginRegisterSample1Module),
     },
 ];

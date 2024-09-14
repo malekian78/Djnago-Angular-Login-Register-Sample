@@ -1,21 +1,27 @@
-<form class="login">
+<form class="login" [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
   <div class="login__field">
     <!-- email -->
     <i class="login__icon fas fa-user"></i>
-    <input type="text" class="login__input" placeholder="User name / Email">
+    <input formControlName="email" type="text" class="login__input" placeholder="User name / Email">
+    <p *ngIf="!formGroup.controls['email'].valid && formGroup.controls['email'].touched" class="text-danger position-absolute">
+      ایمیل نا معتبر می باشد
+    </p>
   </div>
   <div class="login__field">
     <!-- password -->
     <i class="login__icon fas fa-lock"></i>
-    <input type="password" class="login__input" placeholder="Password">
+    <input formControlName="password" type="password" class="login__input" placeholder="Password">
+    <p *ngIf="!formGroup.controls['password'].valid && formGroup.controls['password'].touched" class="text-danger position-absolute">
+      پسورد نا معتبر می باشد
+    </p>
   </div>
   <!-- submit button -->
-  <button class="button login__submit">
+  <button class="button login__submit" [ngClass]="formGroup.valid? 'login-submit-allowed':'login-submit-not-allowed'" [disabled]="!formGroup.valid" type="submit">
     <span class="button__text">Log In Now</span>
     <i class="button__icon fas fa-chevron-right"></i>
   </button>
 </form>
 <div class="register-link d-flex align-items-center text-white position-absolute r-14 b-0">
   <p class="m-0">don't have an account?</p>
-  <a class="ms-2 p-2 text-white rounded" href="testy"> Register </a>
+  <a class="ms-2 p-2 text-white rounded" routerLink="/sample1/register"> Register </a>
 </div>

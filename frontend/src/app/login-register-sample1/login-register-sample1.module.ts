@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginRegisterSample1RoutingModule } from './login-register-sample1-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { MatFormFieldModule } from '@angular/material/form-field';
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { MatIconModule } from '@angular/material/icon';
 // import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 // import { MatButtonModule } from '@angular/material/button';
@@ -23,10 +23,12 @@ import { RegisterComponent } from './register/register.component';
     //! Material imports
     // MatIconModule,
     // MatProgressSpinnerModule,
-    // MatFormFieldModule,FormsModule, ReactiveFormsModule,
+    // MatFormFieldModule,
     // MatButtonModule,
     // MatCheckboxModule,
     // MatInputModule,
+
+    FormsModule, ReactiveFormsModule,
 
     CommonModule,
     LoginRegisterSample1RoutingModule,
